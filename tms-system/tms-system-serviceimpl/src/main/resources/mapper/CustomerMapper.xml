@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helloword.mapper.CustomerMapper">
+  <resultMap id="BaseResultMap" type="com.helloword.entity.Customer">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="customer_sex" jdbcType="VARCHAR" property="customerSex" />
+    <result column="customer_idcard" jdbcType="VARCHAR" property="customerIdcard" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="customer_photo" jdbcType="VARCHAR" property="customerPhoto" />
+    <result column="customer_type" jdbcType="VARCHAR" property="customerType" />
+    <result column="spare" jdbcType="VARCHAR" property="spare" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, customer_name, customer_sex, customer_idcard, phone, customer_photo, customer_type, 
+    spare
+  </sql>
+  <select id="selectByExample" parameterType="com.helloword.entity.CustomerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_customer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_customer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_customer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.helloword.entity.CustomerExample">
+    delete from t_customer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.helloword.entity.Customer">
+    insert into t_customer (id, customer_name, customer_sex, 
+      customer_idcard, phone, customer_photo, 
+      customer_type, spare)
+    values (#{id,jdbcType=INTEGER}, #{customerName,jdbcType=VARCHAR}, #{customerSex,jdbcType=VARCHAR}, 
+      #{customerIdcard,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{customerPhoto,jdbcType=VARCHAR}, 
+      #{customerType,jdbcType=VARCHAR}, #{spare,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.helloword.entity.Customer">
+    insert into t_customer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="customerName != null">
+        customer_name,
+      </if>
+      <if test="customerSex != null">
+        customer_sex,
+      </if>
+      <if test="customerIdcard != null">
+        customer_idcard,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="customerPhoto != null">
+        customer_photo,
+      </if>
+      <if test="customerType != null">
+        customer_type,
+      </if>
+      <if test="spare != null">
+        spare,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="customerName != null">
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerSex != null">
+        #{customerSex,jdbcType=VARCHAR},
+      </if>
+      <if test="customerIdcard != null">
+        #{customerIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="customerPhoto != null">
+        #{customerPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="customerType != null">
+        #{customerType,jdbcType=VARCHAR},
+      </if>
+      <if test="spare != null">
+        #{spare,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.helloword.entity.CustomerExample" resultType="java.lang.Long">
+    select count(*) from t_customer
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_customer
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.customerName != null">
+        customer_name = #{record.customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerSex != null">
+        customer_sex = #{record.customerSex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerIdcard != null">
+        customer_idcard = #{record.customerIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null">
+        phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerPhoto != null">
+        customer_photo = #{record.customerPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerType != null">
+        customer_type = #{record.customerType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.spare != null">
+        spare = #{record.spare,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_customer
+    set id = #{record.id,jdbcType=INTEGER},
+      customer_name = #{record.customerName,jdbcType=VARCHAR},
+      customer_sex = #{record.customerSex,jdbcType=VARCHAR},
+      customer_idcard = #{record.customerIdcard,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      customer_photo = #{record.customerPhoto,jdbcType=VARCHAR},
+      customer_type = #{record.customerType,jdbcType=VARCHAR},
+      spare = #{record.spare,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.helloword.entity.Customer">
+    update t_customer
+    <set>
+      <if test="customerName != null">
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerSex != null">
+        customer_sex = #{customerSex,jdbcType=VARCHAR},
+      </if>
+      <if test="customerIdcard != null">
+        customer_idcard = #{customerIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="customerPhoto != null">
+        customer_photo = #{customerPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="customerType != null">
+        customer_type = #{customerType,jdbcType=VARCHAR},
+      </if>
+      <if test="spare != null">
+        spare = #{spare,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.helloword.entity.Customer">
+    update t_customer
+    set customer_name = #{customerName,jdbcType=VARCHAR},
+      customer_sex = #{customerSex,jdbcType=VARCHAR},
+      customer_idcard = #{customerIdcard,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      customer_photo = #{customerPhoto,jdbcType=VARCHAR},
+      customer_type = #{customerType,jdbcType=VARCHAR},
+      spare = #{spare,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

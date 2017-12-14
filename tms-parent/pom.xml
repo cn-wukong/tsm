@@ -8,10 +8,10 @@
     <artifactId>tms-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>../tms-shop</module>
-        <module>../tms-scenic</module>
-        <module>../tms-finance</module>
-        <module>../tms-storage</module>
+        <!--<module>../tms-shop</module>-->
+        <!--<module>../tms-scenic</module>-->
+        <!--<module>../tms-finance</module>-->
+        <!--<module>../tms-storage</module>-->
         <module>../tms-system</module>
         <module>../tms-common</module>
     </modules>
