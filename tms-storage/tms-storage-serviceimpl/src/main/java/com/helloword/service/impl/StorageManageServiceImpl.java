@@ -81,5 +81,24 @@ public class StorageManageServiceImpl implements StorageManageService {
 
     }
 
+    /**
+     * 年卡下发
+     * @param num 下发数量
+     * @param name 领卡人姓名
+     * @return 领卡 id段
+     */
+    public String takeCard(Integer num,String name) {
+        //查询t_card下 takeBy 为null 的 order by id asc limit 1 的id
+        Card card = cardMapper.getFirstNull();
+        String beginId = card.getId().toString();
+
+        String endId = beginId+(num - 1);
+
+        cardMapper.updateTakeBy(name,beginId,endId);
+
+        String round = beginId+"-"+endId;
+        return round;
+    }
+
 
 }

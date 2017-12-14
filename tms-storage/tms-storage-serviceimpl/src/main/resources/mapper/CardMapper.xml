@@ -88,6 +88,9 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="getFirstNull" resultMap="BaseResultMap">
+    SELECT * FROM t_card WHERE t_card.takeby is null ORDER BY id desc limit 0,1
+  </select>
 
   <select id="findLast" resultMap="BaseResultMap">
     SELECT * FROM t_card ORDER BY id DESC limit 1
@@ -194,6 +197,13 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+  <update id="updateTakeBy" parameterType="java.lang.String">
+      UPDATE t_card
+      SET t_card.takeby = #{name}
+      WHERE
+          id BETWEEN #{id}
+      AND #{id2}
+  </update>
   <update id="updateByExampleSelective" parameterType="map">
     update t_card
     <set>
