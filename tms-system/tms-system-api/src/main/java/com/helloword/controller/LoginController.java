@@ -56,7 +56,7 @@ public class LoginController {
         try {
             Subject subject = SecurityUtils.getSubject();
             UsernamePasswordToken usernamePasswordToken =
-                    new UsernamePasswordToken(account,new Md5Hash(password).toString(),rememberMe);
+                    new UsernamePasswordToken(account,password,rememberMe);
             subject.login(usernamePasswordToken);
 
             //跳转到登录前访问的URL

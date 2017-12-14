@@ -655,6 +655,8 @@ public class CustomerExample {
         }
     }
 
+    /**
+     */
     public static class Criteria extends GeneratedCriteria {
 
         protected Criteria() {

@@ -1,8 +1,12 @@
 package com.helloword.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LogTravel {
+/**
+ * @author 
+ */
+public class LogTravel implements Serializable {
     private Integer id;
 
     private String logIp;
@@ -12,6 +16,10 @@ public class LogTravel {
     private Integer travelId;
 
     private String spare;
+
+    private static final long serialVersionUID = 1L;
+
+
 
     public Integer getId() {
         return id;

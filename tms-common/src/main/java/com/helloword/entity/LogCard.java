@@ -1,8 +1,12 @@
 package com.helloword.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LogCard {
+/**
+ * @author 
+ */
+public class LogCard implements Serializable {
     private Integer id;
 
     private Date logTime;
@@ -12,6 +16,9 @@ public class LogCard {
     private Integer scenicid;
 
     private String spare;
+
+    private static final long serialVersionUID = 1L;
+
 
     public Integer getId() {
         return id;

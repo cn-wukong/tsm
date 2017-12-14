@@ -1,8 +1,12 @@
 package com.helloword.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Card {
+/**
+ * @author 
+ */
+public class Card implements Serializable {
     private Integer id;
 
     private String cardNum;
@@ -15,11 +19,21 @@ public class Card {
 
     private Integer customerid;
 
+    /**
+     * 被哪个售票点领走的
+     */
     private String takeby;
 
+    /**
+     * 缴费记录
+     */
     private Integer year;
 
     private String spare;
+
+    private static final long serialVersionUID = 1L;
+
+
 
     public Integer getId() {
         return id;

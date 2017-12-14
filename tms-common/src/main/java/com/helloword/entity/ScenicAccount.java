@@ -1,8 +1,12 @@
 package com.helloword.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ScenicAccount {
+/**
+ * @author 
+ */
+public class ScenicAccount implements Serializable {
     private Integer id;
 
     private String account;
@@ -16,6 +20,10 @@ public class ScenicAccount {
     private String accountPhoto;
 
     private String spare;
+
+    private static final long serialVersionUID = 1L;
+
+
 
     public Integer getId() {
         return id;

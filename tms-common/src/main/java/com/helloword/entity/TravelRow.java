@@ -1,9 +1,18 @@
 package com.helloword.entity;
 
-public class TravelRow {
+import java.io.Serializable;
+
+/**
+ * @author 
+ */
+public class TravelRow implements Serializable {
     private Integer id;
 
     private String roleName;
+
+    private static final long serialVersionUID = 1L;
+
+
 
     public Integer getId() {
         return id;

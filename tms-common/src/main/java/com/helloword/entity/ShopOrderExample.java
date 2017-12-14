@@ -365,6 +365,8 @@ public class ShopOrderExample {
         }
     }
 
+    /**
+     */
     public static class Criteria extends GeneratedCriteria {
 
         protected Criteria() {

@@ -46,6 +46,7 @@ public class TravelLoginServiceImpl implements TravelLoginService{
         TravelExample travelExample = new TravelExample();
         travelExample.createCriteria().andAccountEqualTo(account);
         List<Travel> travelList = travelMapper.selectByExample(travelExample);
+        System.out.println(">>>>>>>>>>>>>>>>"+travelList);
         return travelList.get(0);
     }
 }

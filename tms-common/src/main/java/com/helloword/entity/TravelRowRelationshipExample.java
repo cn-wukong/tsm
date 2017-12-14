@@ -225,6 +225,8 @@ public class TravelRowRelationshipExample {
         }
     }
 
+    /**
+     */
     public static class Criteria extends GeneratedCriteria {
 
         protected Criteria() {

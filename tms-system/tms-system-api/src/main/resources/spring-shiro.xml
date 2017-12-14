@@ -17,7 +17,7 @@
 
     <!--配置表单鉴别器-->
     <bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">
-        <property name="usernameParam" value="mobile"/>
+        <property name="usernameParam" value="account"/>
         <property name="passwordParam" value="password"/>
         <property name="loginUrl" value="/"/>
     </bean>

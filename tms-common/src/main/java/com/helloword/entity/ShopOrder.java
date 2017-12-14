@@ -1,13 +1,27 @@
 package com.helloword.entity;
 
-public class ShopOrder {
+import java.io.Serializable;
+
+/**
+ * @author 
+ */
+public class ShopOrder implements Serializable {
     private Integer id;
 
     private String shopName;
 
+    /**
+     * 领卡数量
+     */
     private Integer cardNum;
 
+    /**
+     * 缴费状态(no,yes)
+     */
     private String state;
+
+    private static final long serialVersionUID = 1L;
+
 
     public Integer getId() {
         return id;

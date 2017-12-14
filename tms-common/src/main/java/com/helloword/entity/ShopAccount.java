@@ -1,8 +1,12 @@
 package com.helloword.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ShopAccount {
+/**
+ * @author 
+ */
+public class ShopAccount implements Serializable {
     private Integer id;
 
     private String account;
@@ -15,7 +19,14 @@ public class ShopAccount {
 
     private String accountPhoto;
 
+    /**
+     * 作为售票点负责人姓名
+     */
     private String spare;
+
+    private static final long serialVersionUID = 1L;
+
+
 
     public Integer getId() {
         return id;

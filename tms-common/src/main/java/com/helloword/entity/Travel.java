@@ -1,6 +1,11 @@
 package com.helloword.entity;
 
-public class Travel {
+import java.io.Serializable;
+
+/**
+ * @author 
+ */
+public class Travel implements Serializable {
     private Integer id;
 
     private String account;
@@ -9,7 +14,14 @@ public class Travel {
 
     private String level;
 
+    /**
+     * 备用
+     */
     private String spare;
+
+    private static final long serialVersionUID = 1L;
+
+
 
     public Integer getId() {
         return id;

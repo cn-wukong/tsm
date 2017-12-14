@@ -1,8 +1,12 @@
 package com.helloword.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LogShop {
+/**
+ * @author 
+ */
+public class LogShop implements Serializable {
     private Integer id;
 
     private String logIp;
@@ -12,6 +16,9 @@ public class LogShop {
     private Integer shopAccountid;
 
     private String spare;
+
+    private static final long serialVersionUID = 1L;
+
 
     public Integer getId() {
         return id;

@@ -1,6 +1,11 @@
 package com.helloword.entity;
 
-public class Customer {
+import java.io.Serializable;
+
+/**
+ * @author 
+ */
+public class Customer implements Serializable {
     private Integer id;
 
     private String customerName;
@@ -13,9 +18,15 @@ public class Customer {
 
     private String customerPhoto;
 
+    /**
+     * 儿童，学生，成人
+     */
     private String customerType;
 
     private String spare;
+
+    private static final long serialVersionUID = 1L;
+
 
     public Integer getId() {
         return id;

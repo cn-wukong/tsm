@@ -1,9 +1,17 @@
 package com.helloword.entity;
 
-public class TravelRowRelationshipKey {
+import java.io.Serializable;
+
+/**
+ * @author 
+ */
+public class TravelRowRelationshipKey implements Serializable {
     private Integer tid;
 
     private Integer rid;
+
+    private static final long serialVersionUID = 1L;
+
 
     public Integer getTid() {
         return tid;
