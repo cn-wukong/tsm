@@ -22,68 +22,61 @@ public class StorageManageServiceImpl implements StorageManageService {
     @Autowired
     private CardMapper cardMapper;
 
-    public String saveCard(Integer num,List<String> errorNum) {
+    public String findLast() {
+        Card card = cardMapper.findLast();
+        if(card == null) {
+            return "0000001";
+        }else{
+
+            int n = Integer.parseInt(card.getCardNum())+1;
+            String value = Integer.toString(n);
+
+            StringBuilder stringBuilder = new StringBuilder();
+            for(int j = 0;j<(7-Integer.toString(n).length());j++) {
+                stringBuilder.append("0");
+            }
+            value = stringBuilder+value;
+            return value;
+        }
+    }
+
+    public String saveCard(String startNum, Integer num, List<String> errorNum) {
 
         List<String> numList = new ArrayList<String>();
-        //从数据库中获取最后一条数据
-        Card card = cardMapper.findLast();
+        //startNum = 2;
+        int n = Integer.parseInt(startNum);
+        for(int i = 0;i<num;i++) {
 
-        String begin ;
-        String end;
-        if(card == null) {
-            begin = "0000001";
-            int n = 0;
-            //0000001
-            for(int i = 0;i<num;i++) {
-                n++;
-                String value = Integer.toString(n);
-                StringBuilder stringBuilder = new StringBuilder();
-                for(int j = 0;j<(7-Integer.toString(n).length());j++) {
-                    stringBuilder.append("0");
-                }
-                value = stringBuilder+value;
-                numList.add(value);
-
+            String value = Integer.toString(n);
+            StringBuilder stringBuilder = new StringBuilder();
+            for(int j = 0;j<(7-Integer.toString(n).length());j++) {
+                stringBuilder.append("0");
             }
-        }else{
-            int n = Integer.parseInt(card.getCardNum());
-            for(int i = 0;i<num;i++) {
-                n++;
-                String value = Integer.toString(n);
-                StringBuilder stringBuilder = new StringBuilder();
-                for(int j = 0;j<(7-Integer.toString(n).length());j++) {
-                    stringBuilder.append("0");
-                }
-                value = stringBuilder+value;
-                numList.add(value);
-                begin = value;
-            }
+            value = stringBuilder+value;
+            numList.add(value);
+            n++;
         }
+
         //调用cardMapper中自定义多条插入
         cardMapper.saveMuch(numList);
 
         if(errorNum != null) {
             for(String str : numList) {
-                int n = Integer.parseInt(str);
-                for(int i = 0;i<num;i++) {
-                    n++;
-                    String value = Integer.toString(n);
-                    StringBuilder stringBuilder = new StringBuilder();
-                    for(int j = 0;j<(7-Integer.toString(n).length());j++) {
-                        stringBuilder.append("0");
-                    }
-                    value = stringBuilder+value;
-                    CardExample cardExample = new CardExample();
-                    cardExample.createCriteria().andCardNumEqualTo(value);
-                    Card card1 = (Card) cardMapper.selectByExample(cardExample);
-                    //损坏卡
-                    card1.setState("非正常");
-                    cardMapper.updateByPrimaryKey(card1);
+                CardExample cardExample = new CardExample();
+                cardExample.createCriteria().andCardNumEqualTo(str);
+                List<Card> cardList = cardMapper.selectByExample(cardExample);
+                if(cardList == null) {
+                    throw new CardException("该卡不存在");
+                }else{
+                    Card card = cardList.get(0);
+                    card.setState("非正常");
+                    cardMapper.updateByPrimaryKey(card);
                 }
-
             }
         }
-return null;
+        //返回入库卡号段
+        String round = startNum+"~"+cardMapper.findLast().getCardNum();
+        return round;
     }
 
     /**
@@ -109,6 +102,7 @@ return null;
         return round;
     }
 
+    //作废年卡
     public void destoryCard(String cardNum) {
         CardExample cardExample = new CardExample();
         cardExample.createCriteria().andCardNumEqualTo(cardNum);

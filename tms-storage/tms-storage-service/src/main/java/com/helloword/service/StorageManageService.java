@@ -7,12 +7,19 @@ import java.util.List;
  */
 public interface StorageManageService {
 
+
+    /**
+     * 查询最后卡号
+     * @return 返回起始卡号
+     */
+    String findLast();
+
     /**
      * 年票入库
      * @param num 入库数量
      * @param errorNum 损坏卡号集合
      */
-    String saveCard(Integer num,List<String> errorNum);
+    String saveCard(String startNum, Integer num,List<String> errorNum);
 
     /**
      * 年票下发

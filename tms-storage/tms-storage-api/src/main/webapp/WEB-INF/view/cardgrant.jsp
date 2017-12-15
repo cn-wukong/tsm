@@ -11,33 +11,33 @@
     <title>年票下发</title>
 
     <!-- Bootstrap CSS -->    
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
-    <link href="static/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
-    <link href="static/css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="static/css/font-awesome.min.css" rel="stylesheet" />    
+    <link href="/static/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
     <!-- full calendar css-->
-    <link href="static/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-	<link href="static/assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="/static/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+	<link href="/static/assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
     <!-- easy pie chart-->
-    <link href="static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="/static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
     <!-- owl carousel -->
-    <link rel="stylesheet" href="static/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.css" type="text/css">
     <!-- Custom styles -->
-	<link rel="stylesheet" href="static/css/fullcalendar.css">
-	<link href="static/css/widgets.css" rel="stylesheet">
-    <link href="static/css/style.css" rel="stylesheet">
-    <link href="static/css/style-responsive.css" rel="stylesheet" />
-	<link href="static/css/xcharts.min.css" rel=" stylesheet">	
-	<link href="static/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/static/css/fullcalendar.css">
+	<link href="/static/css/widgets.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet" />
+	<link href="/static/css/xcharts.min.css" rel=" stylesheet">
+	<link href="/static/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
-    <![endif]-->
+      <!--<script src="js/html5shiv.js"></script>-->
+      <!--<script src="js/respond.min.js"></script>-->
+      <!--<script src="js/lte-ie7.js"></script>-->
+    <%--<![endif]-->--%>
     <style type="text/css">
         #sousuo{
             position:absolute;
@@ -125,7 +125,7 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="static/img/avatar1_small.jpg">
+                                <img alt="" src="/static/img/avatar1_small.jpg">
                             </span>
                             <span class="username">Hello Word</span>
                             <b class="caret"></b>
@@ -267,43 +267,43 @@
   <!-- container section start -->
 
     <!-- javascripts -->
-    <script src="static/js/jquery.js"></script>
-	<script src="static/js/jquery-ui-1.10.4.min.js"></script>
-    <script src="static/js/jquery-1.8.3.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+	<script src="/static/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="/static/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="static/js/jquery-ui-1.9.2.custom.min.js"></script>
     <!-- bootstrap -->
-    <script src="static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
     <!-- nice scroll -->
-    <script src="static/js/jquery.scrollTo.min.js"></script>
-    <script src="static/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.scrollTo.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.js" type="text/javascript"></script>
     <!-- charts scripts -->
-    <script src="static/assets/jquery-knob/js/jquery.knob.js"></script>
-    <script src="static/js/jquery.sparkline.js" type="text/javascript"></script>
-    <script src="static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-    <script src="static/js/owl.carousel.js" ></script>
+    <script src="/static/assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="/static/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="/static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="/static/js/owl.carousel.js" ></script>
     <!-- jQuery full calendar -->
-    <<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
-	<script src="static/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
+    <<script src="/static/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+	<script src="/static/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
     <!--script for this page only-->
-    <script src="static/js/calendar-custom.js"></script>
-	<script src="static/js/jquery.rateit.min.js"></script>
+    <script src="/static/js/calendar-custom.js"></script>
+	<script src="/static/js/jquery.rateit.min.js"></script>
     <!-- custom select -->
-    <script src="static/js/jquery.customSelect.min.js" ></script>
-	<script src="static/assets/chart-master/Chart.js"></script>
+    <script src="/static/js/jquery.customSelect.min.js" ></script>
+	<script src="/static/assets/chart-master/Chart.js"></script>
 
     <!--custome script for all page-->
-    <script src="static/js/scripts.js"></script>
+    <script src="/static/js/scripts.js"></script>
     <!-- custom script for this page-->
-    <script src="static/js/sparkline-chart.js"></script>
-    <script src="static/js/easy-pie-chart.js"></script>
-	<script src="static/js/xcharts.min.js"></script>
-	<script src="static/js/jquery.autosize.min.js"></script>
-	<script src="static/js/jquery.placeholder.min.js"></script>
-	<script src="static/js/gdp-data.js"></script>
-	<script src="static/js/morris.min.js"></script>
-	<script src="static/js/sparklines.js"></script>
-	<script src="static/js/charts.js"></script>
-	<script src="static/js/jquery.slimscroll.min.js"></script>
+    <script src="/static/js/sparkline-chart.js"></script>
+    <script src="/static/js/easy-pie-chart.js"></script>
+	<script src="/static/js/xcharts.min.js"></script>
+	<script src="/static/js/jquery.autosize.min.js"></script>
+	<script src="/static/js/jquery.placeholder.min.js"></script>
+	<script src="/static/js/gdp-data.js"></script>
+	<script src="/static/js/morris.min.js"></script>
+	<script src="/static/js/sparklines.js"></script>
+	<script src="/static/js/charts.js"></script>
+	<script src="/static/js/jquery.slimscroll.min.js"></script>
   <script>
 
       //knob
