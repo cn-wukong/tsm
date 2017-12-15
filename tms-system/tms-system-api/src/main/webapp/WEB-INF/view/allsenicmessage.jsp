@@ -10,7 +10,7 @@ pageEncoding="UTF-8" %>
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="/static/img/favicon.png">
 
-    <title>TMS-综合管理系统</title>
+    <title>TMS-景区信息</title>
 
     <!-- Bootstrap CSS -->    
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -40,6 +40,14 @@ pageEncoding="UTF-8" %>
       <script src="/static/js/respond.min.js"></script>
       <script src="/static/js/lte-ie7.js"></script>
     <![endif]-->
+
+    <style type="text/css">
+        #sousuo{
+            position:absolute;
+            left: 410px;
+            top: 77px;
+        }
+    </style>
   </head>
 
   <body>
@@ -242,6 +250,97 @@ pageEncoding="UTF-8" %>
 
           </div>
       </aside>
+
+      <section id="main-content">
+        
+        <section class="wrapper">   
+
+               <!--  搜索领卡人信息点 -->
+                      <form class="navbar-form" action="/card/person" method="GET"> 
+                          <input class="form-control" placeholder="输入景区名称" type="text">
+                      </form>
+                       <button type="button" class="btn btn-primary btn-sm" id="sousuo">搜索</button>
+              <!--  search form end -->
+
+           <!--返回景区所有信息-->
+           <div class="container">
+           <table class="table">
+            <thead>
+            <tr>
+                <th>景区名称</th>
+                <th>地址</th>
+                <th>营业状态</th>
+                <th>负责人姓名</th>
+                <th>电话</th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td><a href="/senicID">万仙山</a></td>
+                        <td>焦作市</td>
+                        <td>正常</td>
+                        <td>小李子</td>
+                        <td>13458569584</td>
+                    </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><a href="/senicID">云台山</a></td>
+                    <td>焦作市</td>
+                    <td>正常</td>
+                    <td>小李子</td>
+                    <td>13458569584</td>
+                </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td><a href="/senicID">水帘洞</a></td>
+                <td>焦作市</td>
+                <td>正常</td>
+                <td>小李子</td>
+                <td>13458569584</td>
+            </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><a href="/senicID">王屋山</a></td>
+                    <td>焦作市</td>
+                    <td>正常</td>
+                    <td>小李子</td>
+                    <td>13458569584</td>
+                </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td><a href="/senicID">花果山</a></td>
+                <td>焦作市</td>
+                <td>正常</td>
+                <td>小李子</td>
+                <td>13458569584</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td><a href="/senicID">万仙山</a></td>
+                <td>焦作市</td>
+                <td>正常</td>
+                <td>小李子</td>
+                <td>13458569584</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+            </div>
+           
+          </div>
+          </div>
+          </div>
+        </div>
+        </section>
+
+
+
+
           </section>
       </section>
       <!--main content end-->

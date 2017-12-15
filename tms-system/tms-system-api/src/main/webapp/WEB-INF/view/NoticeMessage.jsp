@@ -3,14 +3,13 @@ pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <META http-equiv=Content-Type content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="/static/img/favicon.png">
 
-    <title>TMS-综合管理系统</title>
+    <title>TMS-电子公告</title>
 
     <!-- Bootstrap CSS -->    
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -40,9 +39,17 @@ pageEncoding="UTF-8" %>
       <script src="/static/js/respond.min.js"></script>
       <script src="/static/js/lte-ie7.js"></script>
     <![endif]-->
-  </head>
 
-  <body>
+    <style type="text/css">
+        #text{
+            font-size: 16px;
+            text-align:center;
+            color: black;
+        }
+    </style>
+   
+  </head>
+  <body >
   <!-- container section start -->
   <section id="container" class="">
      
@@ -153,6 +160,7 @@ pageEncoding="UTF-8" %>
       <!--header end-->
 
 
+
       <!--sidebar start-->
       <aside>
           <div id="sidebar"  class="nav-collapse ">
@@ -242,6 +250,43 @@ pageEncoding="UTF-8" %>
 
           </div>
       </aside>
+
+      <section id="main-content">
+        
+        <section class="wrapper">   
+
+           
+        <div class="row" style="text-align:center"  font-size:16px>
+                <textarea id="text" cols="100" rows="21" readonly>
+                        十九大后首次地方考察 总书记为何去这里
+                        习近平考察徐州 深入学习贯彻党的十九大精神
+                        永志不忘 奋发图强—写在南京大屠杀80周年
+                        中国贸易的“变奏曲”（从大国到强国）  领航新征程
+                        从“三大变革”看实体经济新貌 新时代新气象新作为
+                        确保农民工拿到工资返乡过年 国家做了这些事
+                        民政部拟规定：慈善组织未依法履行信息公开将被罚
+                        国家发改委：12月14日国内成品油价格不作调整
+                        继美联储年内第三次加息后 中国央行上调资金利率
+                        2017年社保十大重要变化:养老金迎来"13连涨"
+                        环保税开征在即：各地征税额存差异 京冀选用上限
+                        城市政务“双微”成标配 存有账号无监管等问题
+                        扎堆入局的智能音响，它究竟是不是虚火旺盛？
+                        住建部：2018年元旦前加快解决当前供暖突出问题
+                        万达回应《王健林的滑铁卢》：全球无债务违约
+                        贵州威宁一煤矿发生疑似瓦斯燃烧事故 已致5死20伤
+                    </textarea> 
+        </div>
+        
+        <br>
+        <div class="form-group has-default has-feedback" style="text-align:center" >
+                 <button type="button" class="btn btn-success" id="save" >编辑</button>
+                 <button type="submit" class="btn btn-success" id="lower" href="/id">保存</button>
+            </div>
+        </section>
+
+
+
+
           </section>
       </section>
       <!--main content end-->
@@ -264,7 +309,7 @@ pageEncoding="UTF-8" %>
     <script src="/static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="/static/js/owl.carousel.js" ></script>
     <!-- jQuery full calendar -->
-    <<script src="/static/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+    <script src="/static/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
 	<script src="/static/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
     <!--script for this page only-->
     <script src="/static/js/calendar-custom.js"></script>
@@ -317,6 +362,8 @@ pageEncoding="UTF-8" %>
 
 
   </script>
+
+  
 
   </body>
 </html>

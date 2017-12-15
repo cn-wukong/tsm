@@ -3,14 +3,13 @@ pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <META http-equiv=Content-Type content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="/static/img/favicon.png">
 
-    <title>TMS-综合管理系统</title>
+    <title>TMS-消息中心</title>
 
     <!-- Bootstrap CSS -->    
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -40,9 +39,9 @@ pageEncoding="UTF-8" %>
       <script src="/static/js/respond.min.js"></script>
       <script src="/static/js/lte-ie7.js"></script>
     <![endif]-->
+   
   </head>
-
-  <body>
+  <body >
   <!-- container section start -->
   <section id="container" class="">
      
@@ -153,6 +152,7 @@ pageEncoding="UTF-8" %>
       <!--header end-->
 
 
+
       <!--sidebar start-->
       <aside>
           <div id="sidebar"  class="nav-collapse ">
@@ -242,6 +242,32 @@ pageEncoding="UTF-8" %>
 
           </div>
       </aside>
+
+      <section id="main-content">
+        
+        <section class="wrapper">   
+
+           
+        <div class="row" >
+                             <h3 style="text-align:center" ><a href="/message/id">1.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</a></h3>
+                             <h3 style="text-align:center" ><a href="/message/id">2.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</a></h3>
+                             <h3 style="text-align:center" ><a href="/message/id">3.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</a></h3>
+                             <h3 style="text-align:center" ><a href="/message/id">4.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</a></h3>
+                             <h3 style="text-align:center" ><a href="/message/id">5.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</a></h3>
+                             <h3 style="text-align:center" ><a href="/message/id">6.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</a></h3>
+                             <h3 style="text-align:center" ><a href="/message/id">7.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</a></h3>
+                             <h3 style="text-align:center" ><a href="/message/id">8.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</a></h3>
+        </div>
+        <br>
+        <div class="form-group has-default has-feedback" style="text-align:center">
+                 <button type="button" class="btn btn-success" id="top" >上一页</button>
+                 <button type="submit" class="btn btn-success" id="lower" href="/id">下一页</button>
+            </div>
+        </section>
+
+
+
+
           </section>
       </section>
       <!--main content end-->
@@ -264,7 +290,7 @@ pageEncoding="UTF-8" %>
     <script src="/static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="/static/js/owl.carousel.js" ></script>
     <!-- jQuery full calendar -->
-    <<script src="/static/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+    <script src="/static/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
 	<script src="/static/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
     <!--script for this page only-->
     <script src="/static/js/calendar-custom.js"></script>
@@ -317,6 +343,8 @@ pageEncoding="UTF-8" %>
 
 
   </script>
+
+  
 
   </body>
 </html>
