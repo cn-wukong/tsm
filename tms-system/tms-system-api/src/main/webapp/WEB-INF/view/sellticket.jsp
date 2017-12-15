@@ -40,6 +40,14 @@ pageEncoding="UTF-8" %>
       <script src="/static/js/respond.min.js"></script>
       <script src="/static/js/lte-ie7.js"></script>
     <![endif]-->
+
+    <style type="text/css">
+        #sousuo{
+            position:absolute;
+            left: 410px;
+            top: 77px;
+        }
+    </style>
   </head>
 
   <body>
@@ -242,6 +250,79 @@ pageEncoding="UTF-8" %>
 
           </div>
       </aside>
+
+      <section id="main-content">
+        
+        <section class="wrapper">   
+
+           
+           <!--返回景区详细信息-->
+            <div class="row">
+                <div class="col-lg-2"></div>
+              <div class="col-lg-6"><br>
+      <form class="form-horizontal" action="/card/destory/now" method="GET">
+          <div class="form-group has-default has-feedback">
+              <label class="control-label col-sm-3" for="inputSuccess3" >售票点名称</label>
+              <div class="col-sm-9">
+              <input type="text" readonly class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status" value="万仙山" name="name">
+          </div>
+          </div>
+           <div class="form-group has-default has-feedback">
+              <label class="control-label col-sm-3" for="inputSuccess3">地址</label>
+              <div class="col-sm-9">
+              <input type="text" readonly class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status" value="焦作市" name="address">
+              </div>
+          </div>
+            <div class="form-group has-default has-feedback">
+              <label class="control-label col-sm-3" for="inputSuccess3">营业状态</label>
+              <div class="col-sm-9">
+              <input type="text"  class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status" value="正常" name="starte">
+           </div>
+          </div>
+
+          <div class="form-group has-default has-feedback">
+            <label class="control-label col-sm-3" for="inputSuccess3">上次购票</label>
+            <div class="col-sm-9">
+            <input type="text" readonly class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status" value="2000张" name="value">
+         </div>
+        </div>
+
+           <div class="form-group has-default has-feedback">
+              <label class="control-label col-sm-3" for="inputSuccess3">负责人</label>
+              <div class="col-sm-9">
+              <input type="text"  class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status" value="小李子" name="personaame">
+          </div>
+          </div>
+
+          <div class="form-group has-default has-feedback">
+              <label class="control-label col-sm-3" for="inputSuccess3">负责人电话</label>
+              <div class="col-sm-9">
+              <input type="text"  class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status" value="13945765373" name="phone">
+          </div>
+          </div>
+      </form>
+      <br>
+          <div class="form-group has-default has-feedback">
+              <label class="control-label col-sm-3" for="inputSuccess3"></label>
+              <div class="col-sm-9">
+               <button type="button" class="btn btn-primary btn-lg" id="save">保存</button>
+               <button type="submit" class="btn btn-primary btn-lg" id="return" href="index.html">返回</button>
+          </div>
+
+          </div>
+             
+            </div>
+            </div>
+           
+          </div>
+          </div>
+          </div>
+        </div>
+        </section>
+
+
+
+
           </section>
       </section>
       <!--main content end-->

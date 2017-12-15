@@ -8,7 +8,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="/static/img/favicon.png">
 
-    <title>HelloWord库存</title>
+    <title>TMS-年票库存管理</title>
 
     <!-- Bootstrap CSS -->    
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
