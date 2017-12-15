@@ -41,7 +41,7 @@
 
     
     <div class="container">
-      <form class="login-form" method="post" action="/travel/login">
+      <form class="login-form" method="post">
       <div class="text-center">
          <h1>TSM-<span class="lite">年票库存管理</span></h1>
       </div>
@@ -49,14 +49,14 @@
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" placeholder="账号" name="remember" value="">
+              <input type="text" class="form-control" placeholder="账号" name="account">
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                <input type="password" class="form-control" placeholder="密码" name="password" value="">
+                <input type="password" class="form-control" placeholder="密码" name="password">
             </div>
             <label class="checkbox">
-                <input type="checkbox" value="remember-me"> 记住账号
+                <input type="checkbox"  name="rememberMe"> 记住账号
                 <span class="pull-right"> <a href="#"> 忘记密码</a></span>
             </label>
             <button class="btn btn-primary btn-lg btn-block" type="submit">登录</button>
