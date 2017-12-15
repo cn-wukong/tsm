@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tms-common" />
+        <module name="tms-finance-api" />
+        <module name="tms-finance-service" />
+        <module name="tms-finance-serviceimpl" />
+        <module name="tms-storage-api" />
+        <module name="tms-storage-service" />
+        <module name="tms-storage-serviceimpl" />
+        <module name="tms-system-api" />
+        <module name="tms-system-service" />
+        <module name="tms-system-serviceimpl" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tms-common" target="1.5" />
+      <module name="tms-finance" target="1.5" />
+      <module name="tms-finance-api" target="1.8" />
+      <module name="tms-finance-service" target="1.5" />
+      <module name="tms-finance-serviceimpl" target="1.5" />
+      <module name="tms-parent" target="1.5" />
+      <module name="tms-storage" target="1.5" />
+      <module name="tms-storage-api" target="1.8" />
+      <module name="tms-storage-service" target="1.5" />
+      <module name="tms-storage-serviceimpl" target="1.5" />
+      <module name="tms-system" target="1.5" />
+      <module name="tms-system-api" target="1.8" />
+      <module name="tms-system-service" target="1.8" />
+      <module name="tms-system-serviceimpl" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

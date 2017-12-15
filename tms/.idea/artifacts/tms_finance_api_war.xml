@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tms-finance-api:war">
+    <output-path>$PROJECT_DIR$/../tms-finance/tms-finance-api/target</output-path>
+    <root id="archive" name="tms-finance-api-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="tms-finance-api:war exploded" />
+    </root>
+  </artifact>
+</component>

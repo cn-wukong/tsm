@@ -1,0 +1,3 @@
+com\helloword\service\impl\StorageManageServiceImpl.class
+com\helloword\mapper\ShopOrderMapper.class
+com\helloword\mapper\CardMapper.class

@@ -53,6 +53,7 @@ public class LoginController {
     @PostMapping("/")
     public String login(String account, String password, boolean rememberMe,
                         RedirectAttributes redirectAttributes, HttpServletRequest request) {
+        System.out.println(account+password+rememberMe);
         try {
             Subject subject = SecurityUtils.getSubject();
             UsernamePasswordToken usernamePasswordToken =

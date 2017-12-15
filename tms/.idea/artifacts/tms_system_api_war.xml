@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tms-system-api:war">
+    <output-path>$PROJECT_DIR$/../tms-system/tms-system-api/target</output-path>
+    <root id="archive" name="tms-system-api-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="tms-system-api:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,3 @@
+com\helloword\auth\ShiroRealm.class
+com\helloword\controller\LoginController.class
+com\helloword\controller\HomeController.class
