@@ -173,6 +173,20 @@ pageEncoding="UTF-8" %>
                       </a>
                   </li>
 
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="glyphicon glyphicon-lock"></i>
+                          <span>用户管理</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="general.html">旅游局管理用户</a></li>
+                          <li><a class="" href="buttons.html">综合管理用户</a></li>
+                          <li><a class="" href="grids.html">结算管理用户</a></li>
+                          <li><a class="" href="grids.html">售票用户</a></li>
+                      </ul>
+                  </li>
+
                     <li class="sub-menu">
                       <a class="" href="/card/save">
                           <i class="icon_document_alt"></i>
@@ -213,12 +227,7 @@ pageEncoding="UTF-8" %>
                         </a>
                   </li>
 
-                  <li>
-                    <a class="" href="/card/count">
-                        <i class="glyphicon glyphicon-list"></i>
-                    <span>用户管理</span>
-                    </a>
-                 </li>
+
                  
                     <li>
                         <a class="" href="/card/count">
