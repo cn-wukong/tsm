@@ -43,7 +43,7 @@
 
     
     <div class="container">
-      <form class="login-form" method="post" >
+      <form class="login-form" method="post" action="allsellticket.jsp">
       <div class="text-center">
          <h1>TSM-<span class="lite">综合管理系统</span></h1>
       </div>
