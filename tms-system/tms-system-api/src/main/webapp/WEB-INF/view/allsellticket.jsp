@@ -10,7 +10,7 @@ pageEncoding="UTF-8" %>
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="/static/img/favicon.png">
 
-    <title>TMS-综合管理系统</title>
+    <title>TMS-票点信息</title>
 
     <!-- Bootstrap CSS -->    
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -201,7 +201,7 @@ pageEncoding="UTF-8" %>
                    </li>
                    <li>
                     <a class="" href="/card/count">
-                    <i class="icon-camera-retro"></i>
+                        <i class="glyphicon glyphicon-asterisk"></i>
                     <span>规章制度</span>
                     </a>
                     </li>
@@ -255,9 +255,9 @@ pageEncoding="UTF-8" %>
         
         <section class="wrapper">   
 
-               <!--  搜索领卡人信息点 -->
+               <!--  搜索景区 -->
                       <form class="navbar-form" action="/card/person" method="GET"> 
-                          <input class="form-control" placeholder="输入购票人账号" type="text">
+                          <input class="form-control" placeholder="输入售票点名称" type="text">
                       </form>
                        <button type="button" class="btn btn-primary btn-sm" id="sousuo">搜索</button>
               <!--  search form end -->

@@ -193,7 +193,7 @@ pageEncoding="UTF-8" %>
                    </li>
                    <li>
                     <a class="" href="/card/count">
-                    <i class="icon-camera-retro"></i>
+                        <i class="glyphicon glyphicon-asterisk"></i>
                     <span>规章制度</span>
                     </a>
                     </li>

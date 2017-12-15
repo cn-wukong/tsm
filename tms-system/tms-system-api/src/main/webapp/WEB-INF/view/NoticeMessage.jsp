@@ -9,7 +9,7 @@ pageEncoding="UTF-8" %>
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
 
-    <title>TMS-综合管理系统</title>
+    <title>TMS-电子公告</title>
 
     <!-- Bootstrap CSS -->    
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -201,7 +201,7 @@ pageEncoding="UTF-8" %>
                    </li>
                    <li>
                     <a class="" href="/card/count">
-                    <i class="icon-camera-retro"></i>
+                        <i class="glyphicon glyphicon-asterisk"></i>
                     <span>规章制度</span>
                     </a>
                     </li>
