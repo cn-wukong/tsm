@@ -101,7 +101,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.helloword.entity.ScenicAccount">
+  <insert id="insert" parameterType="com.helloword.entity.ScenicAccount" useGeneratedKeys="true" keyProperty="id">
     insert into t_scenic_account (id, account, password, 
       create_time, update_time, account_photo, 
       spare)

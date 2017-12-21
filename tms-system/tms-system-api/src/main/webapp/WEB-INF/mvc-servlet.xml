@@ -10,6 +10,7 @@
         <!--防止其他扫描冲突，配置其他扫描在扫描时，放弃扫描该包注解下的类-->
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+    <context:property-placeholder location="classpath*:log4j.properties"/>
 
     <!--新特性中无名氏配置-->
     <mvc:annotation-driven/>

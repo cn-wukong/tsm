@@ -40,6 +40,9 @@ public class ShiroRealm extends AuthorizingRealm {
         for(TravelRow role : travelRows) {
             roleNameList.add(role.getRoleName());
         }
+        for(String name : roleNameList){
+            System.out.println(name+"sdfsfdsfsdf");
+        }
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         //
         simpleAuthorizationInfo.addRoles(roleNameList);

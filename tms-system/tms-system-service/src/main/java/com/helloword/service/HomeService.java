@@ -1,6 +1,7 @@
 package com.helloword.service;
 
 import com.helloword.entity.Scenic;
+import com.helloword.entity.ScenicAccount;
 
 import java.util.List;
 
@@ -10,4 +11,10 @@ public interface HomeService {
      * @return
      */
     List<Scenic> findAllScenic();
+
+    String getUploadToken();
+
+    void saveScenic(Scenic scenic, ScenicAccount scenicAccount);
+
+    Scenic findScenicById(int scenicId);
 }

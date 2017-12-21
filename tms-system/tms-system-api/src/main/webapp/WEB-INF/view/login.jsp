@@ -51,11 +51,11 @@
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" placeholder="账号" name="account">
+              <input type="text" class="form-control" placeholder="账号" name="account" value="110">
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                <input type="password" class="form-control" placeholder="密码" name="password">
+                <input type="password" class="form-control" placeholder="密码" name="password" value="123">
             </div>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" name="rememberMe"> 记住账号
