@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface CardMapper {
+    Integer cardTotalNum();
+
     long countByExample(CardExample example);
 
     int deleteByExample(CardExample example);
@@ -30,9 +32,11 @@ public interface CardMapper {
 
     Card findLast();
 
-    void saveMuch(@Param("numList")List<String> numList);
+    void saveMuch(@Param("numList")List<Card> numList);
 
     void updateTakeBy(String name,String id,String id2);
 
     Card getFirstNull();
+
+    List<Card> cardInvalidateList();
 }

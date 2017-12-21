@@ -162,13 +162,19 @@
                           <span>主页</span>
                       </a>
                   </li>
-
-                    <li class="sub-menu">
-                      <a class="" href="/card/save">
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
                           <span>年票入库</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-                  </li>    
+                      <ul class="sub">
+                          <li><a class="" href="/card/save">新增年票</a></li>
+                          <li><a class="" href="/card/not/down/">未下发年票</a></li>
+                          <li><a class="" href="/card/already/down">已下发年票</a></li>
+
+                      </ul>
+                  </li>
 
                   <li class="sub-menu">
                       <a class="" href="/card/grant">

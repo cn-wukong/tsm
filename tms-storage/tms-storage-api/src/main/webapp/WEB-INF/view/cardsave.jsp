@@ -156,19 +156,25 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li class="active">
-                      <a class="" href="index.html">
+                      <a class="" href="/home">
                           <i class="icon_house_alt"></i>
                           <span>主页</span>
                       </a>
                   </li>
 
-                    <li class="sub-menu">
-                      <a class="" href="/card/save">
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
                           <span>年票入库</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-                  </li>    
+                      <ul class="sub">
+                          <li><a class="" href="/card/save">新增年票</a></li>
+                          <li><a class="" href="/card/not/down/">未下发年票</a></li>
+                          <li><a class="" href="/card/already/down">已下发年票</a></li>
 
+                      </ul>
+                  </li>
                   <li class="sub-menu">
                       <a class="" href="/card/grant">
                           <i class="icon_desktop"></i>
@@ -202,23 +208,23 @@
 			  <div class="row">
                   <div class="col-lg-2"></div>
 				<div class="col-lg-6"><br>
-				<form class="form-horizontal" action="/card/save/now" method="POST">
+				<form class="form-horizontal"  id="saveListCardNum" action="/card/save/now" method="POST">
             <div class="form-group has-default has-feedback">
                 <label class="control-label col-sm-3" for="inputSuccess3">入库数量</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputSuccess4" aria-describedby="inputSuccess3Status">
+                <input type="text" class="form-control" value="" name="num" id="inputSuccess4" aria-describedby="inputSuccess3Status">
                 </div>
             </div>
              <div class="form-group has-default has-feedback">
-                <label class="control-label col-sm-3" for="inputSuccess3">起始卡号</label>
+                <label class="control-label col-sm-3"  for="inputSuccess3">起始卡号</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputSuccess5" aria-describedby="inputSuccess3Status">
+                <input type="text" class="form-control" name="startNum" id="inputSuccess5" aria-describedby="inputSuccess3Status" readonly value="${cardLastNum}">
                 </div>
             </div>
               <div class="form-group has-default has-feedback">
-                <label class="control-label col-sm-3" for="inputSuccess3">损毁年卡</label>
+                <label class="control-label col-sm-3" for="inputSuccess3">损毁卡号</label>
                 <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
+                <input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status" placeholder="请输入损坏卡号，多个卡号以逗号分隔" value="" name="storageNum">
                 </div>
             </div>
             </form>
@@ -226,7 +232,7 @@
                     <div class="form-group has-default has-feedback">
                         <label class="control-label col-sm-3" for="inputSuccess3"></label>
                         <div class="col-sm-9">
-                       <button type="submit" class="btn btn-primary btn-lg">保存</button>
+                       <button type="submit" class="btn btn-primary btn-lg" id="saveCardListNum">保存</button>
                         </div>
                     </div>
               </div>
@@ -308,6 +314,9 @@
           $('select.styled').customSelect();
       });
 
+      $("#saveCardListNum").click(function () {
+            $("#saveListCardNum").submit();
+      });
 
 
   </script>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
   <head>
@@ -36,7 +37,9 @@ pageEncoding="UTF-8" %>
                           <h3 style="margin-bottom: 15px"><span class="label label-info">联系电话</span>　${scenic.phone}</h3>
                           <h3 style="margin-bottom: 15px"><span class="label label-success">所在地点</span>　${scenic.address}</h3>
                           <h3 style="margin-bottom: 20px"><span class="label label-info">经度纬度</span>　${scenic.longitude} ${scenic.latitude}</h3>
-                          <h3 style="margin-bottom: 15px"><span class="label label-success">景区介绍</span>  </h3>
+                          <h3 style="margin-bottom: 15px"><span class="label label-success">创建时间</span>　<fmt:formatDate value="${scenic.createTime}" pattern="YYYY年MM月dd日"/></h3>
+                          <h3 style="margin-bottom: 20px"><span class="label label-info">修改时间</span>　<fmt:formatDate value="${scenic.updateTime}" pattern="YYYY年MM月dd日"/></h3>
+                          <h3 style="margin-bottom: 15px"><span class="label label-success">景区介绍</span></h3>
                           <div class="alert alert-success" style="width: 1000px;height: auto">
                               <label style="color: black ;font-size: 20px">
                                  ${scenic.info}
@@ -44,10 +47,9 @@ pageEncoding="UTF-8" %>
                           </div>
                       </div>
                       <div class="col-md-6">
-                          <div class="col-md-10">
+                          <div class="col-md-7">
                               <a href="#" class="thumbnail" style="margin-top: -20px">
-                                  <%--todo 使用七牛云--%>
-                                  <img src="/static/img/mountains-on-mars.png">
+                                  <img src="http://ozpf2dllf.bkt.clouddn.com/${scenic.photo}">
                               </a>
                           </div>
                       </div>

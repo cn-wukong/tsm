@@ -1,5 +1,7 @@
 package com.helloword.service;
 
+import com.helloword.entity.Card;
+
 import java.util.List;
 
 /**
@@ -32,6 +34,32 @@ public interface StorageManageService {
      * @param cardNum 作废卡号
      */
     void destoryCard(String cardNum);
+
+    /**
+     * 把作废卡号的字符串以逗号分隔
+     * @param storageNum
+     * @return 返回集合
+     */
+    List<String> storageNumList(String storageNum);
+
+    /**
+     * 返回库存中的卡数量
+     * @return
+     */
+    Integer stockCard();
+
+    /**
+     * 作废卡号
+     * @return
+     */
+    List<Card> invalidateCardNum();
+
+    /**
+     * 作废卡总数
+     * @return
+     */
+    Integer invalidate();
+
 
 
 }

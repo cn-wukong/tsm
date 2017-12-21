@@ -11,33 +11,40 @@
     <title>旅游局管理</title>
 
     <!-- Bootstrap CSS -->    
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
-    <link href="static/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
-    <link href="static/css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="static/css/font-awesome.min.css" rel="stylesheet" />    
+    <link href="/static/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
     <!-- full calendar css-->
-    <link href="static/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-	<link href="static/assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="/static/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+	<link href="/static/assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
     <!-- easy pie chart-->
-    <link href="static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="/static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
     <!-- owl carousel -->
-    <link rel="stylesheet" href="static/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.css" type="text/css">
+    <link href="/static/css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
     <!-- Custom styles -->
-	<link rel="stylesheet" href="static/css/fullcalendar.css">
-	<link href="static/css/widgets.css" rel="stylesheet">
-    <link href="static/css/style.css" rel="stylesheet">
-    <link href="static/css/style-responsive.css" rel="stylesheet" />
-	<link href="static/css/xcharts.min.css" rel=" stylesheet">	
-	<link href="static/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/static/css/fullcalendar.css">
+	<link href="/static/css/widgets.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet" />
+	<link href="/static/css/xcharts.min.css" rel=" stylesheet">
+	<link href="/static/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
+      <script src="/static/js/html5shiv.js"></script>
+      <script src="/static/js/respond.min.js"></script>
+      <script src="/static/js/lte-ie7.js"></script>
     <![endif]-->
+      <style type="text/css">
+          #maps{
+              margin-top: 0px;
+              caret-color:#7878f8;
+          }
+      </style>
   </head>
 
   <body>
@@ -72,14 +79,10 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="photo"><img alt="avatar" src="static/img/avatar-mini.jpg"></span>
-                                    <span class="subject">
+                                    <span class="photo"><img alt="avatar" src="/static/img/avatar-mini.jpg"></span>
                                     <span class="from">小李子</span>
                                     <span class="time">1 分钟</span>
-                                    </span>
-                                    <span class="message">
-                                       我真的很喜欢这个管理面板。
-                                    </span>
+                                    <span class="messagge">我真的很喜欢这个管理面板</span>
                                 </a>
                             </li>
                             <li>
@@ -118,7 +121,7 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="static/img/avatar1_small.jpg">
+                                <img alt="" src="/static/img/avatar1_small.jpg">
                             </span>
                             <span class="username">Hello Word</span>
                             <b class="caret"></b>
@@ -157,19 +160,25 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li class="active">
-                      <a class="" href="index.html">
+                      <a class="" href="/home">
                           <i class="icon_house_alt"></i>
                           <span>主页</span>
                       </a>
                   </li>
 
-                    <li class="sub-menu">
-                      <a class="" href="/card/save">
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
                           <span>年票入库</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-                  </li>    
+                      <ul class="sub">
+                          <li><a class="" href="/card/save">新增年票</a></li>
+                          <li><a class="" href="/card/not/down/">未下发年票</a></li>
+                          <li><a class="" href="/card/already/down">已下发年票</a></li>
 
+                      </ul>
+                  </li>
                   <li class="sub-menu">
                       <a class="" href="/card/grant">
                           <i class="icon_desktop"></i>
@@ -194,6 +203,28 @@
 
           </div>
       </aside>
+      <section id="main-content">
+
+          <section class="wrapper">
+              <div class="row">
+
+                  <div class="panel panel-default" id="maps">
+                      <!-- <div class="panel-heading">
+                          <h2><i class="fa fa-map-marker red"></i><strong>Countries</strong></h2>
+                          <div class="panel-actions">
+                              <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+                              <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                              <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+                          </div>
+                      </div> -->
+                      <div class="panel-body-map">
+                          <div id="map" style="height:530px;"></div>
+                      </div>
+
+                  </div>
+
+
+              </div>
           </section>
       </section>
       <!--main content end-->
@@ -201,43 +232,45 @@
   <!-- container section start -->
 
     <!-- javascripts -->
-    <script src="static/js/jquery.js"></script>
-	<script src="static/js/jquery-ui-1.10.4.min.js"></script>
-    <script src="static/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="static/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+	<script src="/static/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-ui-1.9.2.custom.min.js"></script>
     <!-- bootstrap -->
-    <script src="static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
     <!-- nice scroll -->
-    <script src="static/js/jquery.scrollTo.min.js"></script>
-    <script src="static/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.scrollTo.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.js" type="text/javascript"></script>
     <!-- charts scripts -->
-    <script src="static/assets/jquery-knob/js/jquery.knob.js"></script>
-    <script src="static/js/jquery.sparkline.js" type="text/javascript"></script>
-    <script src="static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-    <script src="static/js/owl.carousel.js" ></script>
+    <script src="/static/assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="/static/js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="/static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="/static/js/owl.carousel.js" ></script>
     <!-- jQuery full calendar -->
-    <<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
-	<script src="static/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
+    <<script src="/static/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+	<script src="/static/assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
     <!--script for this page only-->
-    <script src="static/js/calendar-custom.js"></script>
-	<script src="static/js/jquery.rateit.min.js"></script>
+    <script src="/static/js/calendar-custom.js"></script>
+	<script src="/static/js/jquery.rateit.min.js"></script>
     <!-- custom select -->
-    <script src="static/js/jquery.customSelect.min.js" ></script>
-	<script src="static/assets/chart-master/Chart.js"></script>
+    <script src="/static/js/jquery.customSelect.min.js" ></script>
+	<script src="/static/assets/chart-master/Chart.js"></script>
 
     <!--custome script for all page-->
-    <script src="static/js/scripts.js"></script>
+    <script src="/static/js/scripts.js"></script>
     <!-- custom script for this page-->
-    <script src="static/js/sparkline-chart.js"></script>
-    <script src="static/js/easy-pie-chart.js"></script>
-	<script src="static/js/xcharts.min.js"></script>
-	<script src="static/js/jquery.autosize.min.js"></script>
-	<script src="static/js/jquery.placeholder.min.js"></script>
-	<script src="static/js/gdp-data.js"></script>
-	<script src="static/js/morris.min.js"></script>
-	<script src="static/js/sparklines.js"></script>
-	<script src="static/js/charts.js"></script>
-	<script src="static/js/jquery.slimscroll.min.js"></script>
+    <script src="/static/js/sparkline-chart.js"></script>
+    <script src="/static/js/easy-pie-chart.js"></script>
+    <script src="/static/js/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="/static/js/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="/static/js/xcharts.min.js"></script>
+	<script src="/static/js/jquery.autosize.min.js"></script>
+	<script src="/static/js/jquery.placeholder.min.js"></script>
+	<script src="/static/js/gdp-data.js"></script>
+	<script src="/static/js/morris.min.js"></script>
+	<script src="/static/js/sparklines.js"></script>
+	<script src="/static/js/charts.js"></script>
+	<script src="/static/js/jquery.slimscroll.min.js"></script>
   <script>
 
       //knob
@@ -266,7 +299,22 @@
           $('select.styled').customSelect();
       });
 
-
+      $(function(){
+          $('#map').vectorMap({
+              map: 'world_mill_en',
+              series: {
+                  regions: [{
+                      values: gdpData,
+                      scale: ['#000', '#000'],
+                      normalizeFunction: 'polynomial'
+                  }]
+              },
+              backgroundColor: '#7878f8',
+              onLabelShow: function(e, el, code){
+                  el.html(el.html()+' (GDP - '+gdpData[code]+')');
+              }
+          });
+      });
 
   </script>
 

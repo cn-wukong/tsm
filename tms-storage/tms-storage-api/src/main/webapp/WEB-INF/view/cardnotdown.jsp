@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -6,8 +7,7 @@
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-
-    <title>年票入库</title>
+    <title>未下发年票</title>
 
     <!-- Bootstrap CSS -->    
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -16,12 +16,12 @@
     <!--external css-->
     <!-- font icon -->
     <link href="/static/css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="static/css/font-awesome.min.css" rel="stylesheet" />    
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
     <!-- full calendar css-->
     <link href="/static/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
 	<link href="/static/assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
     <!-- easy pie chart-->
-    <link href="static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="/static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
     <!-- owl carousel -->
     <link rel="stylesheet" href="/static/css/owl.carousel.css" type="text/css">
     <!-- Custom styles -->
@@ -32,11 +32,11 @@
 	<link href="/static/css/xcharts.min.css" rel=" stylesheet">
 	<link href="/static/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-    <%--<!--[if lt IE 9]>--%>
-      <%--<script src="/static/js/html5shiv.js"></script>--%>
-      <%--<script src="/static/js/respond.min.js"></script>--%>
-      <%--<script src="js/lte-ie7.js"></script>--%>
-    <%--<![endif]-->--%>
+    <!--[if lt IE 9]>
+      <script src="/static/js/html5shiv.js"></script>
+      <script src="/static/js/respond.min.js"></script>
+      <script src="/static/js/lte-ie7.js"></script>
+    <![endif]-->
   </head>
 
   <body>
@@ -50,7 +50,7 @@
             </div>
 
             <!--logo start-->
-            <a href="index.html" class="logo">售票 <span class="lite">工作站</span></a>
+            <a href="index.html" class="logo">TSM <span class="lite">工作站</span></a>
             <!--logo end-->
 
 
@@ -67,22 +67,18 @@
                         <ul class="dropdown-menu extended inbox">
                             <div class="notify-arrow notify-arrow-blue"></div>
                             <li>
-                                <p class="blue">你有一条新邮件</p>
+                                <p class="blue">You have 1 new messages</p>
                             </li>
                             <li>
                                 <a href="#">
                                     <span class="photo"><img alt="avatar" src="/static/img/avatar-mini.jpg"></span>
-                                    <span class="subject">
                                     <span class="from">小李子</span>
-                                    <span class="time">1 分钟前</span>
-                                    </span>
-                                    <span class="message">
-                                       我真的很喜欢这个管理面板。
-                                    </span>
+                                    <span class="time">1 分钟</span>
+                                    <span class="messagge">我真的很喜欢这个管理面板</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">查看所有消息</a>
+                                <a href="#">查看所有邮件</a>
                             </li>
                         </ul>
                     </li>
@@ -103,8 +99,8 @@
                             <li>
                                 <a href="#">
                                     <span class="label label-primary"><i class="icon_profile"></i></span> 
-                                   新消息
-                                    <span class="small italic pull-right">5 分钟</span>
+                                    新消息
+                                    <span class="small italic pull-right">5 mins</span>
                                 </a>
                             </li>
                             <li>
@@ -122,7 +118,7 @@
                             <span class="username">Hello Word</span>
                             <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu extended logout">
+                      <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
                                 <a href="#"><i class="icon_profile"></i>我的信息</a>
@@ -156,19 +152,25 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li class="active">
-                      <a class="" href="index.html">
+                      <a class="" href="/home">
                           <i class="icon_house_alt"></i>
                           <span>主页</span>
                       </a>
                   </li>
 
-                    <li class="sub-menu">
-                      <a class="" href="/card/save">
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
                           <span>年票入库</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-                  </li>    
+                      <ul class="sub">
+                          <li><a class="" href="/card/save">新增年票</a></li>
+                          <li><a class="" href="/card/not/down/">未下发年票</a></li>
+                          <li><a class="" href="/card/already/down">已下发年票</a></li>
 
+                      </ul>
+                  </li>
                   <li class="sub-menu">
                       <a class="" href="/card/grant">
                           <i class="icon_desktop"></i>
@@ -193,50 +195,66 @@
 
           </div>
       </aside>
-      <!--sidebar end-->
 
-
-
-<section id="main-content">
-          <section class="wrapper">            
-			  <div class="row">
+      <section id="main-content">
+          <section class="wrapper">
+              <div class="row">
                   <div class="col-lg-2"></div>
-				<div class="col-lg-6"><br>
-				<form class="form-horizontal" action="/card/save/now" method="POST">
-            <div class="form-group has-default has-feedback">
-                <label class="control-label col-sm-3" for="inputSuccess3">入库数量</label>
-                <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputSuccess4" aria-describedby="inputSuccess3Status">
-                </div>
-            </div>
-             <div class="form-group has-default has-feedback">
-                <label class="control-label col-sm-3" for="inputSuccess3">起始卡号</label>
-                <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputSuccess5" aria-describedby="inputSuccess3Status">
-                </div>
-            </div>
-              <div class="form-group has-default has-feedback">
-                <label class="control-label col-sm-3" for="inputSuccess3">损毁年卡</label>
-                <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
-                </div>
-            </div>
-            </form>
-             <br>
-                    <div class="form-group has-default has-feedback">
-                        <label class="control-label col-sm-3" for="inputSuccess3"></label>
-                        <div class="col-sm-9">
-                       <button type="submit" class="btn btn-primary btn-lg">保存</button>
-                        </div>
-                    </div>
+                  <div class="col-lg-6"><br>
+                      <form class="form-horizontal"  id="saveListCardNum" action="/card/sell" method="get">
+                          <div class="form-group has-default has-feedback">
+                              <label class="control-label col-sm-3" >未下发总数量</label>
+                              <div class="col-sm-9">
+                                  <input type="text" readonly class="form-control" value="${total}" name="num" id="inputSuccess4" aria-describedby="inputSuccess3Status">
+                              </div>
+                          </div>
+                          <div class="form-group has-default has-feedback">
+                              <label class="control-label col-sm-3" >可下发总数量</label>
+                              <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="startNum" id="inputSuccess5" aria-describedby="inputSuccess3Status" readonly value="${normalCard}">
+                              </div>
+                          </div>
+
+                          <div class="form-group has-default has-feedback">
+                              <label class="control-label col-sm-3">损毁总数量</label>
+                              <div class="col-sm-9">
+                                  <input type="text" readonly class="form-control" id="inputSuccess6" aria-describedby="inputSuccess3Status" placeholder="请输入损坏卡号，多个卡号以逗号分隔" value="${invalidate}" name="storageNum">
+                              </div>
+                          </div>
+
+
+                              <div class="form-group has-default has-feedback">
+                                  <label class="control-label col-sm-3" >损毁卡号</label>
+                                  <div class="col-sm-9">
+                                      <select>
+                                          <c:forEach items="${invalidateCard}" var="user" varStatus="vs">
+                                              <option>${user.cardNum}</option>
+                                          </c:forEach>
+                                      </select>
+                                  </div>
+                              </div>
+
+
+
+
+                      </form>
+                      <br>
+                      <div class="form-group has-default has-feedback">
+                          <label class="control-label col-sm-3" for="inputSuccess3"></label>
+                          <div class="col-sm-9">
+                              <button type="submit" class="btn btn-primary btn-lg" id="saveCardListNum">出售年卡</button>
+                          </div>
+                      </div>
+                  </div>
               </div>
-			  </div>
-             
-			</div>
-			</div>
-			</div>
-          </div>
+
+              </div>
+              </div>
+              </div>
+              </div>
           </section>
+
+
       </section>
       <!--main content end-->
   </section>
@@ -308,8 +326,9 @@
           $('select.styled').customSelect();
       });
 
-
-
+      $("#saveCardListNum").click(function () {
+          $("#saveListCardNum").submit();
+      });
   </script>
 
   </body>

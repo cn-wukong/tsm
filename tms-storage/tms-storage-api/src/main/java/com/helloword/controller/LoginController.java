@@ -1,5 +1,7 @@
 package com.helloword.controller;
 
+import com.helloword.entity.Card;
+import com.helloword.service.StorageManageService;
 import com.helloword.service.TravelLoginService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -9,11 +11,13 @@ import org.apache.shiro.web.util.SavedRequest;
 import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/12/13.
@@ -23,6 +27,9 @@ public class LoginController {
 
     @Autowired
     private TravelLoginService travelLoginService;
+
+    @Autowired
+    private StorageManageService storageManageService;
 
     /**
      * 去登录页面
@@ -89,8 +96,68 @@ public class LoginController {
      * @return
      */
     @GetMapping("/card/save")
-    public String cardSave() {
+    public String cardSave(Model model) {
+        String cardLastNum = storageManageService.findLast();
+        model.addAttribute("cardLastNum",cardLastNum);
         return "cardsave";
+    }
+
+    /**
+     *
+     * @param startNum 开始卡号
+     * @param num  入库数量
+     * @param storageNum 年卡报废卡号
+     * @return
+     */
+    @PostMapping("/card/save/now")
+    public String cardSavaStorage(String startNum,Integer num,String storageNum,Model model){
+        List<String> stringList = storageManageService.storageNumList(storageNum);
+        String cardNum = storageManageService.saveCard(startNum,num,stringList);
+
+        //库存总数
+        Integer total = storageManageService.stockCard();
+
+        //作废卡集合
+        List<Card> invalidateCard = storageManageService.invalidateCardNum();
+
+        //作废卡总数
+        String invalidate = storageManageService.invalidate().toString();
+        //可用卡总数
+        Integer invalidateInt = storageManageService.invalidate();
+        Integer normalCard  = total - invalidateInt;
+        model.addAttribute("total",total);
+        model.addAttribute("invalidate",invalidate);
+        model.addAttribute("invalidateCard",invalidateCard);
+        model.addAttribute("normalCard",normalCard);
+        return "/cardnotdown";
+    }
+
+
+    /**
+     *未下发年票
+     * @param model
+     * @return 库存信息
+     */
+    @GetMapping("/card/not/down/")
+    public String cardNotSell(Model model){
+        //库存总数
+        Integer total = storageManageService.stockCard();
+
+        //作废卡集合
+        List<Card> invalidateCardList = storageManageService.invalidateCardNum();
+
+        //作废卡总数
+        String invalidate = storageManageService.invalidate().toString();
+
+        //Integer类型的作废卡总数
+        Integer invalidateInt = storageManageService.invalidate();
+        //可用卡总数
+        Integer normalCard  = total - invalidateInt;
+        model.addAttribute("total",total);
+        model.addAttribute("invalidate",invalidate);
+        model.addAttribute("invalidateCard",invalidateCardList);
+        model.addAttribute("normalCard",normalCard);
+        return "cardnotdown";
     }
 
     /**
@@ -98,7 +165,12 @@ public class LoginController {
      * @return
      */
     @GetMapping("/card/grant")
-    public String cardGrant() {
+    public String cardGrant(Model model) {
+
+       Integer stockTotal =  storageManageService.stockCard();
+       Integer invalidateTotal = storageManageService.invalidate();
+       Integer cardSell = stockTotal-invalidateTotal;
+       model.addAttribute("cardSell",cardSell);
         return "cardgrant";
     }
 
@@ -118,5 +190,14 @@ public class LoginController {
     @GetMapping("/card/count")
     public String cardCount() {
         return "cardcount";
+    }
+
+    /**
+     * 下发年票
+     * @return
+     */
+    @GetMapping("/card/sell")
+    public String cardsell(){
+        return "/cardgrant";
     }
 }

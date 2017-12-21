@@ -28,7 +28,7 @@
       <module name="tms-storage" target="1.5" />
       <module name="tms-storage-api" target="1.8" />
       <module name="tms-storage-service" target="1.5" />
-      <module name="tms-storage-serviceimpl" target="1.5" />
+      <module name="tms-storage-serviceimpl" target="1.6" />
       <module name="tms-system" target="1.5" />
       <module name="tms-system-api" target="1.8" />
       <module name="tms-system-service" target="1.8" />

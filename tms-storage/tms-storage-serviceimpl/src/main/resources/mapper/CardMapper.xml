@@ -184,11 +184,9 @@
     </trim>
   </insert>
   <insert id="saveMuch" parameterType="list">
-    INSERT INTO t_card (t_card.card_num) VALUES
-    <foreach collection="numList" item="num" separator="," >
-      <trim prefix="(" suffix=")">
-      #{num}
-      </trim>
+    INSERT INTO t_card (t_card.card_num,t_card.state) VALUES
+    <foreach collection="numList" item="card" separator="," >
+      (#{card.cardNum},#{card.state})
     </foreach>
   </insert>
   <select id="countByExample" parameterType="com.helloword.entity.CardExample" resultType="java.lang.Long">
@@ -296,4 +294,22 @@
       spare = #{spare,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="cardTotalNum" resultType="int">
+   SELECT
+        count(*) AS invalidateCardNum
+    FROM
+        t_card
+    WHERE
+        state LIKE '非正常'
+    OR state IS NULL
+  </select>
+
+  <select id="cardInvalidateList" resultMap="BaseResultMap">
+      SELECT
+          *
+      FROM
+          t_card
+      WHERE
+          state = '非正常'
+  </select>
 </mapper>
