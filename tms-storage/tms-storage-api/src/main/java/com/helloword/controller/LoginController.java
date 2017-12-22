@@ -1,6 +1,8 @@
 package com.helloword.controller;
 
 import com.helloword.entity.Card;
+import com.helloword.entity.Shop;
+import com.helloword.service.HomeService;
 import com.helloword.service.StorageManageService;
 import com.helloword.service.TravelLoginService;
 import org.apache.shiro.SecurityUtils;
@@ -30,6 +32,10 @@ public class LoginController {
 
     @Autowired
     private StorageManageService storageManageService;
+
+    @Autowired
+    private HomeService homeService;
+
 
     /**
      * 去登录页面
@@ -197,7 +203,21 @@ public class LoginController {
      * @return
      */
     @GetMapping("/card/sell")
-    public String cardsell(){
+    public String cardsell(Model model,String startNum){
+        model.addAttribute("cardSell",startNum);
+        return "/cardgrant";
+    }
+
+    @GetMapping("/card/person")
+    public String cardSellPerson(Model model,String person){
+
+       int phone =  person.indexOf(person);
+       Integer p = phone;
+        Shop shop =  homeService.findShopByShopId(1);
+//       Shop shop = homeService.findShopByPhone(person);
+//        Shop shop = homeService.findBuPhone(p);
+//        System.out.println("-------"+shop.getAddress());
+        model.addAttribute("shop",shop);
         return "/cardgrant";
     }
 }

@@ -159,4 +159,14 @@ public class HomeServiceImpl  implements HomeService{
         }
         return null;
     }
+
+
+    /**
+     * 张 --根据手机号返回shopAccount对象
+     * @param phone
+     * @return
+     */
+    public Shop findBuPhone(Integer phone){
+      return   shopAccountMapper.selectCardSellPhone(phone);
+    }
 }

@@ -212,8 +212,8 @@
           <section class="wrapper">   
 
                  <!--  搜索领卡人信息点 -->
-                        <form class="navbar-form" action="/card/person" method="GET"> 
-                            <input class="form-control" placeholder="输入购票人账号" type="text">
+                        <form class="navbar-form" id="sousuocardPerson" action="/card/person" method="GET">
+                            <input class="form-control" placeholder="输入购票人账号" type="text" value="" name="person">
                         </form>
                          <button type="button" class="btn btn-primary btn-sm" id="sousuo">搜索</button>
                 <!--  search form end -->
@@ -226,7 +226,7 @@
             <div class="form-group has-default has-feedback">
                 <label class="control-label col-sm-3" for="inputSuccess3" >售票地址</label>
                 <div class="col-sm-9">
-                <input type="text" readonly class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status" value="北京" name="address">
+                <input type="text" readonly class="form-control" id="inputSuccess3"  value="${shop.address}" name="address">
             </div>
             </div>
              <div class="form-group has-default has-feedback">
@@ -345,7 +345,9 @@
           $('select.styled').customSelect();
       });
 
-
+      $("#sousuo").click(function () {
+          $("#sousuocardPerson").submit();
+      });
 
   </script>
 

@@ -240,7 +240,7 @@
                       </form>
                       <br>
                       <div class="form-group has-default has-feedback">
-                          <label class="control-label col-sm-3" for="inputSuccess3"></label>
+                          <label class="control-label col-sm-3" for="inputSuccess6"></label>
                           <div class="col-sm-9">
                               <button type="submit" class="btn btn-primary btn-lg" id="saveCardListNum">出售年卡</button>
                           </div>

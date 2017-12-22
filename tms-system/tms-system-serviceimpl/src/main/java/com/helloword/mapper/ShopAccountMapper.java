@@ -1,5 +1,6 @@
 package com.helloword.mapper;
 
+import com.helloword.entity.Shop;
 import com.helloword.entity.ShopAccount;
 import com.helloword.entity.ShopAccountExample;
 import java.util.List;
@@ -27,4 +28,11 @@ public interface ShopAccountMapper {
     int updateByPrimaryKeySelective(ShopAccount record);
 
     int updateByPrimaryKey(ShopAccount record);
+
+    /**
+     * 张
+     * @param phone
+     * @return
+     */
+    Shop selectCardSellPhone(Integer phone);
 }

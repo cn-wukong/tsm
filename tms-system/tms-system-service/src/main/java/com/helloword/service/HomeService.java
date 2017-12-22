@@ -26,4 +26,11 @@ public interface HomeService {
     Shop findShopByShopId(Integer shopId);
 
     Shop findShopByPhone(String shopPhone);
+
+    /**
+     * 张
+     * @param phone
+     * @return
+     */
+    Shop findBuPhone(Integer phone);
 }

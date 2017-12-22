@@ -91,6 +91,11 @@
     from t_shop_account
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectCardSellPhone" parameterType="java.lang.Integer" resultType="Shop">
+    SELECT * FROM t_shop_account where account = #{phone}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_shop_account
     where id = #{id,jdbcType=INTEGER}
