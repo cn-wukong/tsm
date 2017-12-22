@@ -42,6 +42,9 @@ public class TravelLoginServiceImpl implements TravelLoginService{
         AccountExample accountExample = new AccountExample();
         accountExample.createCriteria().andAccountMobileEqualTo(mobile);
         List<Account> accountList = accountMapper.selectByExample(accountExample);
-        return accountList.get(0);
+        if(accountList!=null&&!accountList.isEmpty()){
+            return accountList.get(0);
+        }
+        return null;
     }
 }

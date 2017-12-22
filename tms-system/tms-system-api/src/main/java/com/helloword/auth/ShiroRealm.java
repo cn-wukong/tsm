@@ -23,7 +23,7 @@ import java.util.List;
 public class ShiroRealm extends AuthorizingRealm {
 
     @Autowired
-    private TravelLoginService travelLoginService;
+    TravelLoginService travelLoginService;
 
     /**
      * 角色或权限认证使用
@@ -59,9 +59,10 @@ public class ShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;
         String account = usernamePasswordToken.getUsername();
+        System.out.println(account);
         Account acc = travelLoginService.findTravelByAccount(account);
         if(account != null) {
-            return new SimpleAuthenticationInfo(acc,acc.getAccountMobile(),getName());
+            return new SimpleAuthenticationInfo(acc,acc.getAccountPassword(),getName());
         }
         return null;
     }

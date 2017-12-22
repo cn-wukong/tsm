@@ -63,7 +63,7 @@ public class ShiroRealm extends AuthorizingRealm {
         String account = usernamePasswordToken.getUsername();
         Account acc = travelLoginService.findTravelByAccount(account);
         if(account != null) {
-            return new SimpleAuthenticationInfo(acc,acc.getAccountMobile(),getName());
+            return new SimpleAuthenticationInfo(acc,acc.getAccountPassword(),getName());
         }
         return null;
     }

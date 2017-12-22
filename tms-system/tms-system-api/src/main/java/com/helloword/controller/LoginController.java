@@ -49,8 +49,6 @@ public class LoginController {
     @PostMapping("/")
     public String login(String mobile, String password, boolean rememberMe,
                         RedirectAttributes redirectAttributes, HttpServletRequest request) {
-        System.out.println(mobile);
-        System.out.println(password);
         try {
             Subject subject = SecurityUtils.getSubject();
             UsernamePasswordToken usernamePasswordToken =
