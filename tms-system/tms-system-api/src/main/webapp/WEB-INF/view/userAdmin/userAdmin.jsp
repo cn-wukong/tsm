@@ -86,12 +86,42 @@ pageEncoding="UTF-8" %>
           <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                   <form class="layui-form layui-form-pane" action="">
-                      
                       <div class="layui-form-item" pane>
-                          <label class="layui-form-label">单选框</label>
+                          <label class="layui-form-label">景区所在地</label>
                           <div class="layui-input-block">
-                              <input type="radio" name="sex" value="男" title="男">
-                              <input type="radio" name="sex" value="女" title="女" checked>
+                              <input type="text" name="address" required lay-verify="required" autocomplete="off" class="layui-input">
+                          </div>
+                      </div>
+                      <div class="layui-form-item" pane>
+                          <label class="layui-form-label">景区所在地</label>
+                          <div class="layui-input-block">
+                              <input type="text" name="address" required lay-verify="required" autocomplete="off" class="layui-input">
+                          </div>
+                      </div>
+                      <div class="layui-form-item" pane>
+                          <label class="layui-form-label">景区所在地</label>
+                          <div class="layui-input-block">
+                              <input type="text" name="address" required lay-verify="required" autocomplete="off" class="layui-input">
+                          </div>
+                      </div>
+
+                      <div class="layui-form-item" pane>
+                          <label class="layui-form-label">景区所在地</label>
+                          <div class="layui-input-block">
+                              <input type="text" name="address" required lay-verify="required" autocomplete="off" class="layui-input">
+                          </div>
+                      </div>
+                      <div class="layui-form-item">
+                          <label class="layui-form-label">景区级别</label>
+                          <div class="layui-input-block">
+                              <select name="level" lay-verify="required">
+                                  <option value=""></option>
+                                  <option value="A">A级</option>
+                                  <option value="AA">AA级</option>
+                                  <option value="AAA">AAA级</option>
+                                  <option value="AAAA">AAAA级</option>
+                                  <option value="AAAAA">AAAAA级</option>
+                              </select>
                           </div>
                       </div>
                   </form>
