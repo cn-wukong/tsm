@@ -4,7 +4,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
             <li class="active">
-                <a class="" href="index.html">
+                <a class="" href="/system/scenic">
                     <i class="icon_house_alt"></i>
                     <span>主页</span>
                 </a>
@@ -17,7 +17,7 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="general.html">旅游局管理用户</a></li>
+                    <li><a class="" href="/system/user/admin">旅游局管理用户</a></li>
                     <li><a class="" href="buttons.html">综合管理用户</a></li>
                     <li><a class="" href="grids.html">结算管理用户</a></li>
                     <li><a class="" href="grids.html">售票用户</a></li>
@@ -32,7 +32,7 @@
             </li>
 
             <li class="sub-menu">
-                <a class="" href="/card/grant">
+                <a class="" href="/system/ticket/shopList">
                     <i class="icon_desktop"></i>
                     <span>售票点信息</span>
                 </a>

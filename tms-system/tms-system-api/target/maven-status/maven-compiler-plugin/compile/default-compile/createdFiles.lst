@@ -1,3 +1,6 @@
+com\helloword\auth\MyRolesFilter.class
 com\helloword\auth\ShiroRealm.class
+com\helloword\controller\TicketShopController.class
 com\helloword\controller\LoginController.class
+com\helloword\controller\UserAdminController.class
 com\helloword\controller\HomeController.class

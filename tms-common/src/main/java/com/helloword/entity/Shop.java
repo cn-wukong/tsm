@@ -23,7 +23,15 @@ public class Shop implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private ShopAccount shopAccount;
 
+    public ShopAccount getShopAccount() {
+        return shopAccount;
+    }
+
+    public void setShopAccount(ShopAccount shopAccount) {
+        this.shopAccount = shopAccount;
+    }
 
     public Integer getId() {
         return id;

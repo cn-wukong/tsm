@@ -26,8 +26,3 @@
 
 <link rel="stylesheet" href="/static/layui/css/layui.css"  media="all">
 
-<!--[if lt IE 9]>
-<script src="/static/js/html5shiv.js"></script>
-<script src="/static/js/respond.min.js"></script>
-<script src="/static/js/lte-ie7.js"></script>
-<![endif]-->

@@ -28,12 +28,12 @@ pageEncoding="UTF-8" %>
                   <div class="row">
                       <div class="col-md-1"></div>
                       <div class="col-md-10">
-                          <a style="font-size: 40px; float: right" href="/system/scenic/account/add"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                          <a href="/system/scenic/account/add" class="layui-btn layui-btn-info" style="float: right">添加景区信息</a>
                           <c:choose>
                               <c:when test="${not empty scenicList}">
                                   <table class="table table-hover">
                                       <thead>
-                                      <tr style="font-size: 20px;color: #e64911">
+                                      <tr style="font-size: 20px">
                                           <td class="info"><strong>景区名称</strong></td>
                                           <td class="info"><strong>景区所在地</strong></td>
                                           <td class="info"><strong>景区星级</strong></td>

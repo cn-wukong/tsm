@@ -2,11 +2,11 @@ package com.helloword.service.impl;
 
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.helloword.entity.Scenic;
-import com.helloword.entity.ScenicAccount;
-import com.helloword.entity.ScenicExample;
+import com.helloword.entity.*;
 import com.helloword.mapper.ScenicAccountMapper;
 import com.helloword.mapper.ScenicMapper;
+import com.helloword.mapper.ShopAccountMapper;
+import com.helloword.mapper.ShopMapper;
 import com.helloword.service.HomeService;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
@@ -28,6 +28,10 @@ public class HomeServiceImpl  implements HomeService{
     ScenicMapper scenicMapper;
     @Autowired
     ScenicAccountMapper scenicAccountMapper;
+    @Autowired
+    ShopMapper shopMapper;
+    @Autowired
+    ShopAccountMapper shopAccountMapper;
 
     /**
      * 获取所有的景区信息
@@ -76,10 +80,40 @@ public class HomeServiceImpl  implements HomeService{
         scenicMapper.insert(scenic);
     }
 
+    /**
+     * 根据景区id查询具体对象
+     * @param scenicId
+     * @return
+     */
     @Override
     public Scenic findScenicById(int scenicId) {
         Scenic scenic = scenicMapper.selectByPrimaryKey(scenicId);
-        //todo scenicAllMessage 页面中图片的替换
         return scenic;
+    }
+
+    /**
+     * 查询所有的售票点信息并对应其负责人信息
+     * @return
+     */
+    @Override
+    public List<Shop> findAllShop() {
+        List<Shop> shopList = shopMapper.selectByExample(new ShopExample());
+        for(Shop shop : shopList){
+            ShopAccount shopAccount = shopAccountMapper.selectByPrimaryKey(shop.getShopAccountid());
+            shop.setShopAccount(shopAccount);
+        }
+        return shopList;
+    }
+
+    /**
+     * 向数据库添加shopAccount 和 shop
+     * @param shopAccount
+     * @param shop
+     */
+    @Override
+    public void createShop(ShopAccount shopAccount, Shop shop) {
+        shopAccountMapper.insert(shopAccount);
+        shop.setShopAccountid(shopAccount.getId());
+        shopMapper.insert(shop);
     }
 }

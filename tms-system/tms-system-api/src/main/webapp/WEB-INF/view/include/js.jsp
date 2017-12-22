@@ -39,3 +39,4 @@
 <script src="/static/js/jquery.slimscroll.min.js"></script>
 
 <script src="/static/layui/layui.all.js" charset="utf-8"></script>
+

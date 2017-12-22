@@ -22,9 +22,6 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class LoginController {
 
-    @Autowired
-    private TravelLoginService travelLoginService;
-
     /**
      * 去登录页面
      * @return
@@ -32,7 +29,6 @@ public class LoginController {
     @GetMapping("/")
     public String index() {
         Subject subject = SecurityUtils.getSubject();
-
         if(subject.isAuthenticated()) {
             //认为用户是要切换账号
             subject.logout();
@@ -46,17 +42,19 @@ public class LoginController {
 
     /**
      * 表单登录方法
-     * @param account
+     * @param mobile
      * @param password
      * @return
      */
     @PostMapping("/")
-    public String login(String account, String password, boolean rememberMe,
+    public String login(String mobile, String password, boolean rememberMe,
                         RedirectAttributes redirectAttributes, HttpServletRequest request) {
+        System.out.println(mobile);
+        System.out.println(password);
         try {
             Subject subject = SecurityUtils.getSubject();
             UsernamePasswordToken usernamePasswordToken =
-                    new UsernamePasswordToken(account,password,rememberMe);
+                    new UsernamePasswordToken(mobile,password,rememberMe);
             subject.login(usernamePasswordToken);
 
             //跳转到登录前访问的URL
@@ -70,7 +68,6 @@ public class LoginController {
 
             return "redirect:"+url;
         } catch (AuthenticationException ex) {
-            ex.printStackTrace();
             redirectAttributes.addFlashAttribute("message","账号或密码错误");
             return "redirect:/";
         }

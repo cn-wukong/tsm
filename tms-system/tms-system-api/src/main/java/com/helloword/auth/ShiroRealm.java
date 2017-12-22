@@ -1,8 +1,9 @@
 package com.helloword.auth;
 
-import com.helloword.entity.Travel;
-import com.helloword.entity.TravelRow;
+import com.helloword.entity.Account;
+import com.helloword.entity.Role;
 import com.helloword.service.TravelLoginService;
+import com.sun.rowset.internal.Row;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -32,19 +33,17 @@ public class ShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         //获取当前登录的对象
-        Travel travel = (Travel) principalCollection.getPrimaryPrincipal();
+        Account account = (Account) principalCollection.getPrimaryPrincipal();
         //根据登录的对象获取该对象的所有角色
-        List<TravelRow> travelRows = travelLoginService.findRowByTravel(travel);
+        List<Role> travelRows = travelLoginService.findRowByTravel(account);
+
         //获取Role集合中的名称，创建字符串列表
         List<String> roleNameList = new ArrayList<>();
-        for(TravelRow role : travelRows) {
+        for(Role role : travelRows) {
             roleNameList.add(role.getRoleName());
         }
-        for(String name : roleNameList){
-            System.out.println(name+"sdfsfdsfsdf");
-        }
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
-        //
+
         simpleAuthorizationInfo.addRoles(roleNameList);
         return simpleAuthorizationInfo;
     }
@@ -60,9 +59,9 @@ public class ShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;
         String account = usernamePasswordToken.getUsername();
-        Travel travel = travelLoginService.findTravelByAccount(account);
+        Account acc = travelLoginService.findTravelByAccount(account);
         if(account != null) {
-            return new SimpleAuthenticationInfo(travel,travel.getPassword(),getName());
+            return new SimpleAuthenticationInfo(acc,acc.getAccountMobile(),getName());
         }
         return null;
     }
