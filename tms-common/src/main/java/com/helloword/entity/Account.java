@@ -2,6 +2,7 @@ package com.helloword.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author 
@@ -20,6 +21,16 @@ public class Account implements Serializable {
     private Date updateTime;
 
     private String accountState;
+
+    private List<Role> roleList;
+
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
+    }
 
     private static final long serialVersionUID = 1L;
 

@@ -28,27 +28,27 @@ pageEncoding="UTF-8" %>
                   <div class="row">
                       <div class="col-md-1"></div>
                       <div class="col-md-10">
-                          <a href="/system/scenic/account/add" class="layui-btn layui-btn-info" style="float: right">添加景区信息</a>
+                          <a href="/system/scenic/account/add" class="layui-btn layui-btn-normal" style="float: right;background-color: #2A858B">添加景区信息</a>
                           <c:choose>
                               <c:when test="${not empty scenicList}">
                                   <table class="table table-hover">
                                       <thead>
-                                      <tr style="font-size: 20px">
-                                          <td class="info"><strong>景区名称</strong></td>
-                                          <td class="info"><strong>景区所在地</strong></td>
-                                          <td class="info"><strong>景区星级</strong></td>
-                                          <td class="info"><strong>景区经理</strong></td>
-                                          <td class="info"><strong>联系电话</strong></td>
+                                      <tr style="font-size: 20px;color: #3d8b40">
+                                          <td class="info"><label>景区名称</label></td>
+                                          <td class="info"><label>景区所在地</label></td>
+                                          <td class="info"><label>景区星级</label></td>
+                                          <td class="info"><label>景区经理</label></td>
+                                          <td class="info"><label>联系电话</label></td>
                                       </tr>
                                       </thead>
                                       <tbody>
                                       <c:forEach items="${scenicList}" var="scenic">
-                                          <tr style="font-size: 20px" class="scenicMessage" val="${scenic.id}">
-                                              <td class="info">${scenic.name}</td>
-                                              <td class="info">${scenic.address}</td>
-                                              <td class="info">${scenic.level}</td>
-                                              <td class="info">${scenic.manager}</td>
-                                              <td class="info">${scenic.phone}</td>
+                                          <tr style="font-size: 20px;color:#1a1a1a" class="scenicMessage" val="${scenic.id}">
+                                              <td class="info"><label>${scenic.name}</label></td>
+                                              <td class="info"><label>${scenic.address}</label></td>
+                                              <td class="info"><label>${scenic.level}</label></td>
+                                              <td class="info"><label>${scenic.manager}</label></td>
+                                              <td class="info"><label>${scenic.phone}</label></td>
                                           </tr>
                                       </c:forEach>
                                       </tbody>

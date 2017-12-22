@@ -1,9 +1,6 @@
 package com.helloword.service;
 
-import com.helloword.entity.Scenic;
-import com.helloword.entity.ScenicAccount;
-import com.helloword.entity.Shop;
-import com.helloword.entity.ShopAccount;
+import com.helloword.entity.*;
 
 import java.util.List;
 
@@ -23,4 +20,10 @@ public interface HomeService {
     List<Shop> findAllShop();
 
     void createShop(ShopAccount shopAccount, Shop shop);
+
+    List<Account> findAllTravelAccount();
+
+    Shop findShopByShopId(Integer shopId);
+
+    Shop findShopByPhone(String shopPhone);
 }

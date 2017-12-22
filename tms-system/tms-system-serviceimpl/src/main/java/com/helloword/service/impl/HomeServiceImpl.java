@@ -3,10 +3,7 @@ package com.helloword.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.helloword.entity.*;
-import com.helloword.mapper.ScenicAccountMapper;
-import com.helloword.mapper.ScenicMapper;
-import com.helloword.mapper.ShopAccountMapper;
-import com.helloword.mapper.ShopMapper;
+import com.helloword.mapper.*;
 import com.helloword.service.HomeService;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
@@ -32,6 +29,10 @@ public class HomeServiceImpl  implements HomeService{
     ShopMapper shopMapper;
     @Autowired
     ShopAccountMapper shopAccountMapper;
+    @Autowired
+    AccountMapper accountMapper;
+    @Autowired
+    RoleMapper roleMapper;
 
     /**
      * 获取所有的景区信息
@@ -105,6 +106,7 @@ public class HomeServiceImpl  implements HomeService{
         return shopList;
     }
 
+
     /**
      * 向数据库添加shopAccount 和 shop
      * @param shopAccount
@@ -115,5 +117,46 @@ public class HomeServiceImpl  implements HomeService{
         shopAccountMapper.insert(shopAccount);
         shop.setShopAccountid(shopAccount.getId());
         shopMapper.insert(shop);
+    }
+
+    /**
+     * 查询所有的旅游局用户
+     * @return
+     */
+    @Override
+    public List<Account> findAllTravelAccount() {
+        List<Account> accountList = accountMapper.selectByExample(new AccountExample());
+        for(Account account : accountList){
+            //根据account的id查询所有对应的角色
+            List<Role> roleList = roleMapper.findAllRoleByAccountId(account.getId());
+            account.setRoleList(roleList);
+        }
+        return accountList;
+    }
+
+    /**
+     * 根据售票点的id来获取对象
+     * @param shopId
+     * @return
+     */
+    @Override
+    public Shop findShopByShopId(Integer shopId) {
+        return shopMapper.selectByPrimaryKey(shopId);
+    }
+
+    /**
+     * 根据售票点手机号来获取对象
+     * @param shopPhone
+     * @return
+     */
+    @Override
+    public Shop findShopByPhone(String shopPhone) {
+        ShopExample shopExample = new ShopExample();
+        shopExample.createCriteria().andPhotoEqualTo(shopPhone);
+        List<Shop> shopList = shopMapper.selectByExample(shopExample);
+        if(shopList!=null && !shopList.isEmpty()){
+            return shopList.get(0);
+        }
+        return null;
     }
 }

@@ -28,25 +28,25 @@ pageEncoding="UTF-8" %>
                   <div class="row">
                       <div class="col-md-1"></div>
                       <div class="col-md-10">
-                          <a href="/system/ticketShop/add" class="layui-btn layui-btn-info" style="float: right">添加售票点信息</a>
+                          <a href="/system/ticketShop/add" class="layui-btn layui-btn-normal" style="float: right;background-color: #2A858B">添加售票点信息</a>
                           <c:choose>
                               <c:when test="${not empty shopList}">
                                   <table class="table table-hover">
                                       <thead>
-                                      <tr style="font-size: 20px;">
-                                          <td class="info"><strong>售票点名称</strong></td>
-                                          <td class="info"><strong>售票点所在地</strong></td>
-                                          <td class="info"><strong>管理人姓名</strong></td>
-                                          <td class="info"><strong>联系电话</strong></td>
+                                      <tr style="font-size: 20px;color: #2A858B">
+                                          <td class="info"><label>售票点名称</label></td>
+                                          <td class="info"><label>售票点所在地</label></td>
+                                          <td class="info"><label>管理人姓名</label></td>
+                                          <td class="info"><label>联系电话</label></td>
                                       </tr>
                                       </thead>
                                       <tbody>
                                       <c:forEach items="${shopList}" var="shop">
-                                          <tr style="font-size: 20px" class="scenicMessage" val="${shop.id}">
-                                              <td class="info">${shop.name}</td>
-                                              <td class="info">${shop.address}</td>
-                                              <td class="info">${shop.shopAccount.spare}</td>
-                                              <td class="info">${shop.shopAccount.account}</td>
+                                          <tr style="font-size: 20px;color: #1a1a1a" class="scenicMessage" val="${shop.id}">
+                                              <td class="info"><label>${shop.name}</label></td>
+                                              <td class="info"><label>${shop.address}</label></td>
+                                              <td class="info"><label>${shop.shopAccount.spare}</label></td>
+                                              <td class="info"><label>${shop.shopAccount.account}</label></td>
                                           </tr>
                                       </c:forEach>
                                       </tbody>
